@@ -2,7 +2,10 @@
 
 This React-based User Management application offers a professional, modern, and interactive interface with full CRUD functionality — Create, Read, Update, Delete — designed to demonstrate practical development skills as part of a hiring process.
 
-A live demo is available here: **[Live Demo on Vercel](https://your-vercel-app-link.vercel.app)**
+A live demo is available here: **[Live Demo on Vercel](https://user-management-mocha-delta.vercel.app/)**
+
+
+https://user-management-mocha-delta.vercel.app/
 
 ---
 
