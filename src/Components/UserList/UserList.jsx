@@ -12,7 +12,8 @@ const UserList = ({ users, setUsers }) => {
         .then(data => setUsers(data))
         .catch(() => setUsers([]));
     }
-  }, [users, setUsers]);
+    
+  }, [setUsers]);
 
   const handleDelete = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`, { method: 'DELETE' })

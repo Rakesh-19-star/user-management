@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import UserForm from '../../Components/UserForm/UserForm';
-import "./index.css"
+import './index.css';
 
 const UpdateUser = ({ users, setUsers }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const userToEdit = users.find(u => u.id === Number(id)) || {};
-
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
 
@@ -18,9 +17,9 @@ const UpdateUser = ({ users, setUsers }) => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatedUser),
+      body: JSON.stringify(updatedUser)
     })
-      .then(async (res) => {
+      .then(async res => {
         const data = await res.json();
         if (!res.ok) {
           const errorMsg = (data && data.message) || res.statusText || 'Update failed';
@@ -31,13 +30,9 @@ const UpdateUser = ({ users, setUsers }) => {
       .then(() => {
         setUsers(users.map(u => (u.id === Number(id) ? updatedUser : u)));
         setSuccess(true);
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
+        setTimeout(() => navigate('/'), 2000);
       })
-      .catch((err) => {
-        setError(err.message || 'Error updating user');
-      });
+      .catch(err => setError(err.message || 'Error updating user'));
   };
 
   return (

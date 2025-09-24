@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserForm from '../../Components/UserForm/UserForm';
-import "./index.css"
+import './index.css';
 
 const AddUser = ({ users, setUsers }) => {
   const navigate = useNavigate();
@@ -18,14 +18,12 @@ const AddUser = ({ users, setUsers }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newUser),
     })
-      .then(res => res.json())
-      .then(() => {
-        setUsers([...users, newUser]);
-        setSuccess(true);
-        setTimeout(() => {
-          navigate('/');
-        }, 2000); // redirect after 2 seconds
-      });
+    .then(res => res.json())
+    .then(() => {
+      setUsers([...users, newUser]);
+      setSuccess(true);
+      setTimeout(() => navigate('/'), 2000);
+    });
   };
 
   return (
