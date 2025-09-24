@@ -1,0 +1,62 @@
+/* Fixed top navigation bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1976d2;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    /* Equal gap between buttons */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+}
+
+/* Navigation links styled as buttons */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 22px;
+    border-radius: 25px;
+    background-color: #2196f3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect */
+nav a:hover {
+    background-color: #1565c0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Active link style */
+nav a.active {
+    background-color: #0d47a1;
+    box-shadow: none;
+    cursor: default;
+    transform: none;
+}
+
+/* Focus outline for accessibility */
+nav a:focus-visible {
+    outline: 2px solid #82b1ff;
+    outline-offset: 2px;
+}
+
+/* Add some padding to body top so content doesn't go under fixed nav */
+body {
+    padding-top: 60px;
+    /* Adjust based on nav height */
+}
